@@ -5,7 +5,11 @@ require('dotenv').config();
 
 // --> 7)  Mount the Logger middleware here	
 
-
+app.use(function(req, res, next)
+{
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+});
 
 
 // --> 11)  Mount the body-parser middleware  here	
