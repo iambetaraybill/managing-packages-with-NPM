@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 require('dotenv').config();
+var bodyParser = require('body-parser');
 
 
 // --> 7)  Mount the Logger middleware here	
@@ -15,7 +16,7 @@ app.use(function(req, res, next)
 // --> 11)  Mount the body-parser middleware  here	
 
 
-
+app.use(bodyParser.urlencoded({extended: false}));
 
 /** 1) Meet the node console. */	
 
@@ -96,6 +97,20 @@ app.get("/name",function(req,res)
 
 /** 11) Get ready for POST Requests - the `body-parser` */	
 // place it before all the routes !	
+
+// Install the body-parser module in your package.json. 
+// Then, require it at the top of the file.
+// Store it in a variable named bodyParser.
+// The middleware to handle urlencoded data is returned by
+// bodyParser.urlencoded({extended: false}).
+// Pass to app.use() the function returned by the previous method call.
+// As usual, the middleware must be mounted before all the routes which need it.
+
+// Note: extended=false is a configuration option that tells the parser to use the classic encoding.
+// When using it, values can be only strings or arrays. 
+// The extended version allows more data flexibility, but it is outmatched by JSON.
+
+
 
 
 
