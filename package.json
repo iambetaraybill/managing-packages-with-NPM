@@ -1,5 +1,6 @@
 {
 	"name": "fcc-learn-node-with-express",
+	"author": "Arpan Sarkar",
 	"version": "0.1.0",
 	"dependencies": {
 		"express": "^4.14.0",
